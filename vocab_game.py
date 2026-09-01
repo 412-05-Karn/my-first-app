@@ -52,7 +52,7 @@ def show_result_dialog(ans1, ans2):
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
     # ตรวจข้อ 3
-    if u_ans2 == "Birds":
+    if u_ans2 == "birds":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
@@ -102,11 +102,11 @@ ans2 = st.text_input(
 )
 ans3 = st.text_input(
     "ข้อ 3: `B _ r d s` fly high in the sky. 🦜",
-    value=st.session_state.ans2_val,
+    value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
     "ข้อ 4: Ice is very `c _ l d`. 🧊",
-    value=st.session_state.ans2_val,
+    value=st.session_state.ans4_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
@@ -126,7 +126,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2)
+    show_result_dialog(ans1, ans2, ans3, ans4,)
 
 st.divider()
 st.write("นายกานต์ พิเชฐกุลสัมพันธ์ เลขที่5 ม.4/12")
